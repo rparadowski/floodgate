@@ -2,13 +2,13 @@
 
 GATE_API_BRANCH=$1
 
-./prepare_extra_directories.sh
+.cilibs/prepare_extra_directories.sh
 
-./setup_swagger_codegen.sh
+.cilibs/setup_swagger_codegen.sh
 
-./get_gate_code.sh $GATE_API_BRANCH
+.cilibs/get_gate_code.sh $GATE_API_BRANCH
 
-./generate_swagger_json.sh
+.cilibs/generate_swagger_json.sh
 
-./generate_gateapi_go_code.sh
+.cilibs/generate_gateapi_go_code.sh
 

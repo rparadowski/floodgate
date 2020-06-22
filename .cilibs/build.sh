@@ -22,19 +22,19 @@ while getopts "o:a:g" opt; do
   esac
 done
 
-./get_dependencies.sh
+.cilibs/get_dependencies.sh
 
-./examine_source_code_with_go_get.sh
+.cilibs/examine_source_code_with_go_get.sh
 
-./execute_go_tests.sh
+.cilibs/execute_go_tests.sh
 
-./compile_code.sh -o ${BUILD_OS} -a ${BUILD_ARCH} -g ${GATE_API_BRANCH}
+.cilibs/compile_code.sh -o ${BUILD_OS} -a ${BUILD_ARCH} -g ${GATE_API_BRANCH}
 
-./calculate_code_coverage.sh $SEND_COVERITY
+.cilibs/calculate_code_coverage.sh $SEND_COVERITY
 
-./check_linting.sh
+.cilibs/check_linting.sh
 
-./copy_binaries_for_later_use.sh
+.cilibs/copy_binaries_for_later_use.sh
 
-./generate_checksum.sh -o ${BUILD_OS} -a ${BUILD_ARCH} -g ${GATE_API_BRANCH}
+.cilibs/generate_checksum.sh -o ${BUILD_OS} -a ${BUILD_ARCH} -g ${GATE_API_BRANCH}
 
