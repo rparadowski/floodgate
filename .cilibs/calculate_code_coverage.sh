@@ -14,7 +14,7 @@ curl \
   --header "Content-Type: application/json" \
   --data "{\"value\":\"${CURRENTCODECOVERAGE} %\",\"sha\":\"${CIRCLE_SHA1}\"}" \
   https://seriesci.com/api/codilime/floodgate/coverage/one
-elif
+else
   echo "Skipping"
 fi
 if [ ${CURRENTCODECOVERAGE%.*} -lt ${REQUIREDCODECOVERAGE} ]
@@ -23,6 +23,6 @@ then
     echo "Current code coverage: ${CURRENTCODECOVERAGE}%"
     echo "Required code coverage: ${REQUIREDCODECOVERAGE}%"
     exit 1
-elif
+else
     echo "Code coverage is at least ${REQUIREDCODECOVERAGE}% : OK"
 fi
