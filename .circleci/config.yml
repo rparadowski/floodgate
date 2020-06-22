@@ -145,7 +145,7 @@ jobs:
           at: ./
       - run:
           name: Prepare directories
-          command: sudo .cilibs/prepare_directories.sh
+          command: .cilibs/prepare_directories.sh
       - install_toolset
       - run:
           name: Update /etc/hosts

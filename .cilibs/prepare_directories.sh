@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 echo "Prepare directories"
-mkdir /floodgate
-chmod 777 /floodgate
+sudo mkdir /floodgate
+sudo chmod 777 /floodgate
 mkdir -p /floodgate/bin
 mkdir -p /floodgate/libs
 mkdir -p /floodgate/resources
