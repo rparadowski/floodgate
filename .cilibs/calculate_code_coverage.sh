@@ -9,7 +9,8 @@ CURRENTCODECOVERAGE=$(grep 'total:' codecoverage.txt | awk '{print substr($3, 1,
 
 echo "Send coverity report to SeriesCI"
 if [[ $SEND_COVERITY == "send" ]]
-curl \
+then 
+  curl \
   --header "Authorization: Token ${SERIESCI_TOKEN}" \
   --header "Content-Type: application/json" \
   --data "{\"value\":\"${CURRENTCODECOVERAGE} %\",\"sha\":\"${CIRCLE_SHA1}\"}" \
