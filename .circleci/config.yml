@@ -145,7 +145,7 @@ jobs:
           at: ./
       - run:
           name: Prepare directories
-          command: .cilibs/prepare_directories.sh
+          command: .cilibs/prepare_directories.sh -o << parameters.build_os >> -a << parameters.build_arch >> -g << parameters.gate_api_branch >>
       - install_toolset
       - run:
           name: Update /etc/hosts
