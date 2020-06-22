@@ -42,7 +42,7 @@ jobs:
       - checkout
       - run:
           name: Prepare extra directories
-          command: .cilibs/prepare_extra_directories.sh 
+          command: sudo .cilibs/prepare_extra_directories.sh 
       - run:
           name: Setup swagger-codegen
           command: .cilibs/setup_swagger_codegen.sh 
@@ -113,7 +113,7 @@ jobs:
           command: .cilibs/check_linting.sh
       - run:
           name: Copy binaries for later use
-          command: .cilibs/copy_binaries_for_later_use.sh
+          command: sudo .cilibs/copy_binaries_for_later_use.sh
       - run:
           name: Generate checksum
           command: .cilibs/generate_checksum.sh -o << parameters.build_os >> -a << parameters.build_arch >> -g << parameters.gate_api_branch >>
@@ -145,7 +145,7 @@ jobs:
           at: ./
       - run:
           name: Prepare directories
-          command: .cilibs/prepare_directories.sh
+          command: sudo .cilibs/prepare_directories.sh
       - install_toolset
       - run:
           name: Update /etc/hosts
