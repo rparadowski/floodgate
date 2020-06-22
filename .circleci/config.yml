@@ -45,7 +45,7 @@ jobs:
           command: sudo .cilibs/prepare_extra_directories.sh 
       - run:
           name: Setup swagger-codegen
-          command: .cilibs/setup_swagger_codegen.sh 
+          command: sudo .cilibs/setup_swagger_codegen.sh 
       - run:
           name: Get gate code
           command: .cilibs/get_gate_code.sh << parameters.gate_api_branch >>
