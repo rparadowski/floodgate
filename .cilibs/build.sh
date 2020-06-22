@@ -28,7 +28,7 @@ done
 
 .cilibs/execute_go_tests.sh
 
-.cilibs/compile_code.sh -o ${BUILD_OS} -a ${BUILD_ARCH} -g ${GATE_API_BRANCH}
+.cilibs/compile_code.sh -o ${BUILD_OS} -a ${BUILD_ARCH} -g ${GATE_VERSION}
 
 .cilibs/calculate_code_coverage.sh $SEND_COVERITY
 
@@ -36,5 +36,5 @@ done
 
 .cilibs/copy_binaries_for_later_use.sh
 
-.cilibs/generate_checksum.sh -o ${BUILD_OS} -a ${BUILD_ARCH} -g ${GATE_API_BRANCH}
+.cilibs/generate_checksum.sh -o ${BUILD_OS} -a ${BUILD_ARCH} -g ${GATE_VERSION}
 

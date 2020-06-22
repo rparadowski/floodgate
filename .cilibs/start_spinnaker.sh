@@ -1,9 +1,24 @@
 #!/bin/bash -e
 
-GATE_API_BRANCH=$1
-FLOODGATE_EXTRA_PARAMS=$2
+while getopts "o:a:g" opt; do
+  case ${opt} in
+    o) #Build OS
+      BUILD_OS=${OPTARG}
+      ;;
+    a) #Build arch
+      BUILD_ARCH=${OPTARG}
+      ;;
+    g) #Gate version
+      GATE_VERSION=${OPTARG}
+      ;;
+    e) #Floodgate extra params
+      FLOODGATE_EXTRA_PARAMS=${OPTARG}
+      ;;
+  esac
+done
 
-.cilibs/prepare_directories.sh
+
+.cilibs/prepare_directories.sh -o $BUILD_OS -a $BUILD_ARCH -g $GATE_VERSION
 
 .cilibs/install_toolset.sh
 
